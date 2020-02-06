@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 67339642}
-  playerHealth: 230
+  maxHP: 0
 --- !u!4 &440631812
 Transform:
   m_ObjectHideFlags: 0

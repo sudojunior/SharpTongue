@@ -5,13 +5,14 @@ using UnityEngine;
 public class HealthHandler : MonoBehaviour
 {
     [SerializeField] private HealthBar healthBar;
-    public float playerHealth;
+    float playerHealth;
+    public int maxHP;
 
     private void Start()
     {
         if (playerHealth == 0)
         {
-            playerHealth = 100f;
+            playerHealth = 1f;
         }
     }
 
@@ -20,9 +21,10 @@ public class HealthHandler : MonoBehaviour
         // if hit
         if (playerHealth > 0)
         {
-            playerHealth -= 1f;
+            playerHealth -= 0.01f;
             healthBar.SetHealth(playerHealth);
         }
         // else dead
+        // send over current health and display (current health/ maxhp)
     }
 }
