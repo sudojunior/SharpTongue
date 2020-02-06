@@ -25,6 +25,6 @@ public class HealthHandler : MonoBehaviour
             healthBar.SetHealth(playerHealth);
         }
         // else dead
-        // send over current health and display (current health/ maxhp)
+        // send over current health and display (current health/ maxhp).
     }
 }
