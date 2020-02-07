@@ -9,5 +9,24 @@ public class Weapon : Item
     float minDamage;
     float maxDamage;
 
-    object DamageMatrix() => new object();
+    public class DamageMatrix
+    {
+        public DamageMatrix()
+        {
+
+        }
+
+        public float minDamage { get; set; }
+        public float maxDamage { get; set; }
+        public float rangeDistance { get; set; }
+        public float rangeAngle { get; set; }
+    }
+
+    public DamageMatrix DamageMatrix()
+    {
+        return new DamageMatrix {
+            minDamage = minDamage,
+            maxDamage = maxDamage,
+        };
+    }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Potion : Item
 {
-    ItemEffect effect;
-    float amount;
-    float duration;
+    public ItemEffect effect { get; }
+    public float amount { get; }
+    public float duration { get; }
 }

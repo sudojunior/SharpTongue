@@ -4,21 +4,32 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    bool Enabled;
-    int cooldown;
 
-    void SetEnabled(bool value)
+    public bool Enabled { get; private set; }
+    public float cooldownSeconds { get; private set; }
+
+    public void SetEnabled(bool value)
     {
         Enabled = value;
     }
 
-    bool CanUse()
+    public bool CanUse()
     {
         return Enabled;
     }
 
-    void Use()
+    public void Use()
     {
+        SetEnabled(false); 
+        StartCoroutine(Cooldown(cooldownSeconds));
+    }
+
+    IEnumerator Cooldown(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        SetEnabled(true);
 
     }
+
+    
 }
