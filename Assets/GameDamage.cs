@@ -4,26 +4,36 @@ using UnityEngine;
 
 public class GameDamage : MonoBehaviour
 {
-    public float Damage;
+    public Animator anim;
 
-    public float Health = 100.0f;
+    private Transform attackPoint;
+
+    private float playerRange = 0.1f;
+
+
+
+    [SerializeField]
+    
+    private LayerMask enemyLayers;
+    private float playerHealth;
+    private float enemyDamage;
+   
+
+    void Attack()
+    {
+        anim.SetTrigger("Attack");
+
+    }
+   
 
     void Update()
     {
-        if(Health > 0)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            Health -= 0.1f;
-        }
+            Attack();
 
-        if (Health <= 0)
-        {
-            Debug.Log("You Have Died Lol");
         }
-
     }
 
-
-
-
-
+    
 }
