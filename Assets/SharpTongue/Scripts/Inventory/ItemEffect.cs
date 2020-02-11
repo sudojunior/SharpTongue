@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-enum ItemEffect
+public enum ItemEffect
 {
     Heal,
     Speed,

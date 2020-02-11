@@ -42,7 +42,7 @@ public class InventoryHandler : MonoBehaviour
         Weapon weaponComponent = currentItem.GetComponent<Weapon>();
         if(weaponComponent != null)
         {
-            return weaponComponent.DamageMatrix();
+            return weaponComponent.GetDamageMatrix();
         }
         return null;
     }
