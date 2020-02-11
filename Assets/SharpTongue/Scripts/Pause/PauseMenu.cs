@@ -16,10 +16,22 @@ public class PauseMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P) && Time.timeScale == 1)
         {
             Time.timeScale = 0;
+            ShowPause();
         }
         if (Input.GetKeyDown(KeyCode.P) && Time.timeScale == 0)
         {
-            Time.timeScale = 0;
+            Time.timeScale = 1;
+            HidePause();
         }
+    }
+
+    void ShowPause()
+    {
+
+    }
+
+    void HidePause()
+    {
+
     }
 }
