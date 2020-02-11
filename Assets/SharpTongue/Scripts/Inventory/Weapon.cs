@@ -11,9 +11,10 @@ public class Weapon : Item
 
     public class DamageMatrix
     {
-        public DamageMatrix()
+        public DamageMatrix(float minDamage, float maxDamage)
         {
-
+            this.minDamage = minDamage;
+            this.maxDamage = maxDamage;
         }
 
         public float minDamage { get; set; }
@@ -22,11 +23,8 @@ public class Weapon : Item
         public float rangeAngle { get; set; }
     }
 
-    public DamageMatrix DamageMatrix()
+    public DamageMatrix GetDamageMatrix()
     {
-        return new DamageMatrix {
-            minDamage = minDamage,
-            maxDamage = maxDamage,
-        };
+        return new DamageMatrix(minDamage, maxDamage);
     }
 }
