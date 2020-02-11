@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
     public float MoveSpeed = 5f;
 
     public Rigidbody2D rb;
@@ -28,9 +27,5 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate() 
     {
         rb.MovePosition(rb.position + Movement * MoveSpeed * Time.fixedDeltaTime);
-
-        
-
-
     }
 }
