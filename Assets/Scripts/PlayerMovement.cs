@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 Movement;
 
-     
+
     // Update is called once per frame
     void Update()
     {
@@ -53,10 +53,10 @@ public class PlayerMovement : MonoBehaviour
         }
 
         attackPoint.rotation = Quaternion.Euler(lookPos);
-    
+
     }
 
-    void FixedUpdate() 
+    void FixedUpdate()
     {
         rb.MovePosition(rb.position + Movement * MoveSpeed * Time.fixedDeltaTime);
     }
