@@ -42,4 +42,9 @@ public class Pause : MonoBehaviour
         Player.GetComponent<Animator>().enabled = false;
 
     }
+
+    public void Quit()
+    {
+        Quit();
+    }
 }

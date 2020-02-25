@@ -6,7 +6,11 @@ public class SwordPickUp : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D collider)
     {
-        SceneManager.LoadScene("Sharp Tongue Sir Ward Intro");
-        Destroy(gameObject);
+        if (collider.tag == "Player")
+        {
+            SceneManager.LoadScene("Sharp Tongue Sir Ward Intro");
+            Destroy(gameObject);
+        }
+        
     }
 }
