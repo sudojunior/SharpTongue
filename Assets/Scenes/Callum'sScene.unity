@@ -4736,11 +4736,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
-    - target: {fileID: 5656263820864474959, guid: 068348e57f18ba8409aa17197bac188a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5656263820864474969, guid: 068348e57f18ba8409aa17197bac188a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4796,29 +4791,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5656263820864474971, guid: 068348e57f18ba8409aa17197bac188a,
-        type: 3}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5656263820864474968, guid: 068348e57f18ba8409aa17197bac188a,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7210512988641281447, guid: 068348e57f18ba8409aa17197bac188a,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8908069073768336261, guid: 068348e57f18ba8409aa17197bac188a,
-        type: 3}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5656263820864474968, guid: 068348e57f18ba8409aa17197bac188a, type: 3}
-    - {fileID: 5656263820864474971, guid: 068348e57f18ba8409aa17197bac188a, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 068348e57f18ba8409aa17197bac188a, type: 3}
 --- !u!1001 &1655162780437322550
 PrefabInstance:

@@ -8,16 +8,30 @@ public class Enemy : MonoBehaviour
     private int maxHealth = 10;
     private int currentHealth;
 
+    public static bool enemyInvincible { get; set; }
+    public float invincibleTimer;
+
     // Update is called once per frame
     void Start()
     {
         currentHealth = maxHealth;
     }
 
+    void Update()
+    {
+        if (enemyInvincible && invincibleTimer >= 0)
+        {
+            invincibleTimer -= Time.deltaTime;
+        }
+        else if (invincibleTimer <= 0)
+        {
+            enemyInvincible = false;
+        }
+    } 
+
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-
 
         if (currentHealth <= 0)
         {
