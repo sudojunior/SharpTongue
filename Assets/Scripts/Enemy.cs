@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public GameObject FloatingTextPrefab;
     [SerializeField]
     private int maxHealth = 10;
     private int currentHealth;
@@ -33,10 +34,22 @@ public class Enemy : MonoBehaviour
     {
         currentHealth -= damage;
 
+        if (FloatingTextPrefab && currentHealth > 0)
+        {
+            ShowFloatingText();
+        }
+
         if (currentHealth <= 0)
         {
             Death();
         }
+    }
+
+    void ShowFloatingText()
+    {
+
+        var go = Instantiate(FloatingTextPrefab, transform.position, Quaternion.identity, transform);
+        go.GetComponent<TextMesh>().text = currentHealth.ToString();
     }
 
     void Death()
