@@ -5,10 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Callum'sScene.unity
     guid: 0f4ada5f6c858ab4a9e0b73a49dee8ee
   - enabled: 1
     path: Assets/Scenes/Sharp Tongue Sir Ward Intro.unity
     guid: cbcb5881b1f52014c82ca2bc6bed1ae0
+  - enabled: 1
+    path: Assets/Scenes/ArtScene.unity
+    guid: 8510cd692b0f1fa4ca88cf69cd79ccc5
   m_configObjects: {}

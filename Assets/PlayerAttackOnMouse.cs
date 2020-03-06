@@ -44,7 +44,9 @@ public class PlayerAttackOnMouse : MonoBehaviour
         rb = attackObj.GetComponent<Rigidbody2D>();
         //Thanks to Matt Shaw for help with this line
         rb.AddForce((firePoint.transform.position - player.transform.position ).normalized * boltSpeed, ForceMode2D.Impulse);
-            
+
+        Destroy(attackObj, 2.0f);
+
     }
 
 }
