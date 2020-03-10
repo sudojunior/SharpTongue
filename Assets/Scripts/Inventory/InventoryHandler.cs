@@ -18,4 +18,6 @@ public class InventoryHandler : MonoBehaviour
     public void PreviousSlot() => slot = (slot - 1) % itemMap.Length;
 
     public void Use() => currentItem.Use();
+
+    public void SetSlot(int target) => slot = target;
 }
