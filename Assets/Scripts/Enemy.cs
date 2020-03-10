@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     public GameObject CritTextPrefab;
     [SerializeField]
     private int maxHealth = 10;
+    [SerializeField]
     private int currentHealth;
    
 

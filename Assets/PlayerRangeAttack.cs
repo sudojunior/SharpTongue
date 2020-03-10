@@ -18,17 +18,28 @@ public class PlayerRangeAttack : MonoBehaviour
         enemy = GameObject.FindGameObjectWithTag("Enemy");
     }
 
-    void OnTriggerStay2D(Collider2D collider)
+
+    void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.CompareTag("Enemy"))
         {
+            Debug.Log("Shot enemy");
             if (Time.time >= nextAttackTime && !Enemy.enemyInvincible)
             {
-                enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+                enemy.GetComponentInParent<Enemy>().TakeDamage(attackDamage);
                 nextAttackTime = Time.time + 1f / attackRate;
-                enemy.GetComponent<Enemy>().invincibleTimer = 0.5f;
+                enemy.GetComponentInParent<Enemy>().invincibleTimer = 0.5f;
                 Enemy.enemyInvincible = true;
+                Destroy(gameObject);
             }
+
         }
+
+        else
+        {
+            Destroy(gameObject, 2.0f);
+        }
+
+
     }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3725967947981181293}
   - component: {fileID: 3336626596165226083}
   - component: {fileID: 4457602837788036531}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bolt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,4 +142,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
-  attackDamage: 1
+  attackDamage: 4
