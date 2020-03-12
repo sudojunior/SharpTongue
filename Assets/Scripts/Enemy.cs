@@ -8,8 +8,7 @@ public class Enemy : MonoBehaviour
     public GameObject CritTextPrefab;
     [SerializeField]
     private int maxHealth = 10;
-    [SerializeField]
-    private int currentHealth;
+    public int currentHealth;
    
 
     public static bool enemyInvincible { get; set; }
@@ -87,5 +86,10 @@ public class Enemy : MonoBehaviour
         Debug.Log("Enemy Died!");
         gameObject.SetActive(false);
         Destroy(gameObject);
+    }
+
+    public int TransferEnemyHP()
+    {
+        return currentHealth;
     }
 }

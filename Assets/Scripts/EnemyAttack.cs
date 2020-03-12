@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
 
-    public GameObject player;
+    public Player player;
 
     public int attackDamage = 1;
 
@@ -15,7 +15,7 @@ public class EnemyAttack : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = FindObjectOfType<Player>();
     }
 
 
@@ -26,9 +26,9 @@ public class EnemyAttack : MonoBehaviour
             Debug.Log("Hit the Player");
             if (Time.time >= nextAttackTime && !Player.playerInvincible)
             {
-                player.GetComponent<Player>().TakeDamage(attackDamage);
+                player.TakeDamage(attackDamage);
                 nextAttackTime = Time.time + 1f / attackRate;
-                player.GetComponent<Player>().invincibleTimer = 0.5f;
+                player.invincibleTimer = 0.5f;
                 Player.playerInvincible = true;
             }
 

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - MovePoints
   - Enemy
+  - GameManager
   layers:
   - Default
   - TransparentFX
