@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
+    public GameObject enemyMelee;
+    public PlayerMovement player;
 
-    public Player player;
-
+    public Transform distance;
     public int attackDamage = 1;
 
     public float attackRate = 1f;
@@ -15,24 +16,28 @@ public class EnemyAttack : MonoBehaviour
 
     void Start()
     {
-        player = FindObjectOfType<Player>();
+        player = FindObjectOfType<PlayerMovement>();
     }
 
-
-    void OnTriggerStay2D(Collider2D collider)
+    void Update()
     {
-        if (collider.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Hit the Player");
-            if (Time.time >= nextAttackTime && !Player.playerInvincible)
-            {
-                player.TakeDamage(attackDamage);
-                nextAttackTime = Time.time + 1f / attackRate;
-                player.invincibleTimer = 0.5f;
-                Player.playerInvincible = true;
-            }
+        float dist = Vector2.Distance(distance.position, transform.position);
 
-            
+        if (dist <= 2f)
+        {
+            Attack();
         }
     }
+
+    void Attack()
+    {
+        if (Time.time >= nextAttackTime)
+        {
+            nextAttackTime = Time.time + 1f / attackRate;
+            GameObject EnemyMeleePrefab = Instantiate(enemyMelee, player.transform.position, player.transform.rotation);
+            Destroy(EnemyMeleePrefab, 0.5f);
+        }
+
+    }
+
 }

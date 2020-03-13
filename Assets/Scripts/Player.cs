@@ -28,6 +28,11 @@ public class Player : MonoBehaviour
         {
             playerInvincible = false;
         }
+
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void TakeDamage(int damage)

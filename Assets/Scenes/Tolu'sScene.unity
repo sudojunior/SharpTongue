@@ -4731,6 +4731,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3021490421694413706, guid: 068348e57f18ba8409aa17197bac188a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 3021490421694413706, guid: 068348e57f18ba8409aa17197bac188a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 3021490421694413706, guid: 068348e57f18ba8409aa17197bac188a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3021490421694413715, guid: 068348e57f18ba8409aa17197bac188a,
+        type: 3}
+      propertyPath: FloatingTextPrefab
+      value: 
+      objectReference: {fileID: 8611567553815482199, guid: f82719659c1d3bb41938646df4f68d1a,
+        type: 3}
+    - target: {fileID: 3021490421694413715, guid: 068348e57f18ba8409aa17197bac188a,
+        type: 3}
+      propertyPath: CritTextPrefab
+      value: 
+      objectReference: {fileID: 5389743208210771107, guid: 545314bc4d1118f4e8efc3daa21976a4,
+        type: 3}
     - target: {fileID: 5656263820864474959, guid: 068348e57f18ba8409aa17197bac188a,
         type: 3}
       propertyPath: m_Name
