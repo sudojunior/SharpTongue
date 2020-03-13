@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour
         {
             enemyInvincible = false;
         }
-    } 
+    }
 
     public void TakeDamage(int damage)
     {
@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour
 
         crit = Random.Range(0, 100);
 
-        if (CritTextPrefab && crit % critChance  == 0 )
+        if (CritTextPrefab && crit % critChance == 0)
         {
             currentHealth -= (damage * 2);
             ShowCritText();
@@ -57,7 +57,7 @@ public class Enemy : MonoBehaviour
             ShowFloatingText();
         }
 
-        
+
 
         if (currentHealth <= 0)
         {
@@ -69,16 +69,17 @@ public class Enemy : MonoBehaviour
 
     void ShowCritText()
     {
+        Debug.Log("CritText");
         var Go = Instantiate(CritTextPrefab, transform.position, Quaternion.identity, transform);
         Go.GetComponent<TextMesh>().text = currentHealth.ToString();
     }
     void ShowFloatingText()
     {
-
+        Debug.Log("Floating Text");
         var go = Instantiate(FloatingTextPrefab, transform.position, Quaternion.identity, transform);
         go.GetComponent<TextMesh>().text = currentHealth.ToString();
 
-        
+
     }
 
     void Death()
