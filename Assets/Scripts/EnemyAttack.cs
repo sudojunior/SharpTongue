@@ -17,6 +17,7 @@ public class EnemyAttack : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<PlayerMovement>();
+        distance = FindObjectOfType<PlayerMovement>().transform;
     }
 
     void Update()

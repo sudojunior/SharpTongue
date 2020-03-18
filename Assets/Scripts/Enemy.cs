@@ -9,14 +9,12 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private int maxHealth = 10;
     public int currentHealth;
-   
 
-    public static bool enemyInvincible { get; set; }
+    public bool enemyInvincible;
     public float invincibleTimer;
     public int critChance;
     public int crit;
 
-    // Update is called once per frame
     void Start()
     {
         currentHealth = maxHealth;
@@ -32,41 +30,35 @@ public class Enemy : MonoBehaviour
         {
             enemyInvincible = false;
         }
+
+        Debug.Log(enemyInvincible);
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int attackDamage)
     {
-
-
-        crit = Random.Range(0, 100);
-
-        if (CritTextPrefab && crit % critChance == 0)
-        {
-            currentHealth -= (damage * 2);
-            ShowCritText();
-        }
-
-        // If crit when divided by "critChance", whatever critChance may be - pass in a value - then if the answer has no remainder the critical hit will occur
-
-        else
-        {
-            currentHealth -= damage;
-        }
-        if (FloatingTextPrefab && currentHealth > 0)
-        {
-            ShowFloatingText();
-        }
-
-
+        currentHealth -= attackDamage;
 
         if (currentHealth <= 0)
         {
             Death();
         }
 
-
     }
 
+    void Death()
+    {
+        Debug.Log("Enemy Died!");
+        Destroy(gameObject);
+    }
+
+
+    public int TransferEnemyHP()
+    {
+        return currentHealth;
+    }
+
+
+    /*
     void ShowCritText()
     {
         Debug.Log("CritText");
@@ -78,19 +70,7 @@ public class Enemy : MonoBehaviour
         Debug.Log("Floating Text");
         var go = Instantiate(FloatingTextPrefab, transform.position, Quaternion.identity, transform);
         go.GetComponent<TextMesh>().text = currentHealth.ToString();
-
-
     }
+    */
 
-    void Death()
-    {
-        Debug.Log("Enemy Died!");
-        gameObject.SetActive(false);
-        Destroy(gameObject);
-    }
-
-    public int TransferEnemyHP()
-    {
-        return currentHealth;
-    }
 }

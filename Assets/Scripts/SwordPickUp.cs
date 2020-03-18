@@ -14,7 +14,7 @@ public class SwordPickUp : MonoBehaviour
 
             foreach(Enemy em in enemies)
             {
-                GameManager.enemyPositons.Add(em.transform.position);
+                GameManager.enemyPositions.Add(em.transform.position);
                 GameManager.enemyHealth.Add(em.TransferEnemyHP());
             }
 

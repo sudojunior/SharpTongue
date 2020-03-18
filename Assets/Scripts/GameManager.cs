@@ -6,17 +6,21 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     //Thanks to Cole Gilbert for help creating this script
-
     public static Vector2 playerPosition { get; set; }
-    public static List<Vector2> enemyPositons { get; set; }
+    public static List<Vector2> enemyPositions { get; set; }
     public static List<int> enemyHealth { get; set; }
     public static bool pickedUpSword { get; set; }
+    bool firstScene = true;
+
+
     void OnEnable()
     {
-
         if(GameObject.FindGameObjectsWithTag("GameManager").Length <= 1)
         {
             playerPosition = new Vector2(0, 0);
+            enemyPositions = new List<Vector2> { };
+            enemyHealth = new List<int> { };
+            pickedUpSword = false;
             SceneManager.sceneLoaded += OnSceneLoaded;
             DontDestroyOnLoad(gameObject);
         }
@@ -27,13 +31,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        enemyPositons = new List<Vector2> { };
-        enemyHealth = new List<int> { };
-        pickedUpSword = false;
-    }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
@@ -41,42 +38,45 @@ public class GameManager : MonoBehaviour
         GameObject.FindGameObjectWithTag("Player").transform.position = playerPosition;
         GameObject.Find("HealthBar").GetComponent<HealthBar>().SetHealth(GetComponent<Player>().currentHealth);
 
-        if (enemyPositons.Count > 0)
+        if (firstScene)
         {
-            transform.position = enemyPositons[0];
-            Enemy[] enemies;
-            enemies = FindObjectsOfType<Enemy>();
-            
-            foreach(Enemy em in enemies)
+            firstScene = false;
+        }
+
+        else
+        {
+            if (enemyPositions.Count > 0)
             {
-                if (enemyPositons.Count > 0)
+                transform.position = enemyPositions[0];
+                Enemy[] enemies;
+                enemies = FindObjectsOfType<Enemy>();
+
+                foreach (Enemy em in enemies)
                 {
-                    em.currentHealth = enemyHealth[0];
-                    em.transform.position = enemyPositons[0];
-                    enemyPositons.Remove(enemyPositons[0]);
-                    enemyHealth.Remove(enemyHealth[0]);
+                    if (enemyPositions.Count > 0)
+                    {
+                        em.currentHealth = enemyHealth[0];
+                        em.transform.position = enemyPositions[0];
+                        enemyPositions.Remove(enemyPositions[0]);
+                        enemyHealth.Remove(enemyHealth[0]);
+                    }
+                    else
+                    {
+                        Destroy(em.gameObject);
+                    }
                 }
-                else
+            }
+
+            else
+            {
+                Enemy[] enemies;
+                enemies = FindObjectsOfType<Enemy>();
+
+                foreach (Enemy em in enemies)
                 {
                     Destroy(em.gameObject);
                 }
             }
         }
-
-        else
-        {
-            Enemy[] enemies;
-            enemies = FindObjectsOfType<Enemy>();
-
-            foreach (Enemy em in enemies)
-            {
-                Destroy(em.gameObject);
-            }
-
-        }
-
     }
-
-
-
 }
