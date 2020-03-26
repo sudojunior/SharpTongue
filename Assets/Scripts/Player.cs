@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
     public int maxHealth = 10;
     public int currentHealth;
     public static bool playerInvincible { get; set; }
     public HealthBar healthBar;
     public float invincibleTimer;
+    public GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Update()
@@ -31,15 +32,18 @@ public class Player : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
+            Death();
         }
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-
         healthBar.SetHealth(currentHealth);
     }
-    
+
+    void Death()
+    {
+        Destroy(player);
+    }
 }

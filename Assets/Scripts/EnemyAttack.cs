@@ -11,7 +11,7 @@ public class EnemyAttack : MonoBehaviour
     public int attackDamage = 1;
 
     public float attackRate = 1f;
-    float nextAttackTime = 0f;
+    public float nextAttackTime = 0f;
 
 
     void Start()
@@ -38,6 +38,7 @@ public class EnemyAttack : MonoBehaviour
             GameObject EnemyMeleePrefab = Instantiate(enemyMelee, player.transform.position, player.transform.rotation);
             Destroy(EnemyMeleePrefab, 0.5f);
         }
+
 
     }
 

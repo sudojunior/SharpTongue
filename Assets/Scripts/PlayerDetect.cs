@@ -5,12 +5,14 @@ using UnityEngine;
 public class PlayerDetect : MonoBehaviour
 {
 
+    public static bool detectedPlayer = false;
+    public RadialBulletController bulletController;
+
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.CompareTag("Player"))
         {
-            GetComponent<EnemyPatrol>().enabled = false;
-            GetComponent<EnemyAI>().enabled = true;
+            detectedPlayer = true;
         }
     }
 
@@ -18,8 +20,7 @@ public class PlayerDetect : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Player"))
         {
-            GetComponent<EnemyPatrol>().enabled = true;
-            GetComponent<EnemyAI>().enabled = false;
+            detectedPlayer = false;
         }
 
     }

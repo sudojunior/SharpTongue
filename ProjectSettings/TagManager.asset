@@ -7,6 +7,8 @@ TagManager:
   - MovePoints
   - Enemy
   - GameManager
+  - EnemyProjectile
+  - EnemyLVL1
   layers:
   - Default
   - TransparentFX
