@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public static List<Vector2> enemyPositions { get; set; }
     public static List<int> enemyHealth { get; set; }
     public static bool pickedUpSword { get; set; }
+    public static bool pickedUpCrossbow { get; set; }
     bool firstScene = true;
 
 

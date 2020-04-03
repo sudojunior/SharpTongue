@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Sharp Tongue Sir Ward Intro.unity
     guid: cbcb5881b1f52014c82ca2bc6bed1ae0
+  - enabled: 1
+    path: Assets/Scenes/Level2Callum.unity
+    guid: 3395d4e1a83f6c0478c6f85068c13dab
   - enabled: 0
     path: Assets/Scenes/ArtScene.unity
     guid: 8510cd692b0f1fa4ca88cf69cd79ccc5

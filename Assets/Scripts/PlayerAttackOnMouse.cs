@@ -14,33 +14,45 @@ public class PlayerAttackOnMouse : MonoBehaviour
     public Rigidbody2D rb;
     public float boltSpeed = 20f;
 
-
     void Update()
     {
-
+        
         if (Input.GetButtonDown("Fire1"))
         {
-            Attack();
+            if (GameManager.pickedUpSword == true)
+            {
+                Attack();
+            }
+            else
+            {
+                Debug.Log("You need to get a weapon first!");
+            }
         }
 
         if (Input.GetButtonDown("Fire2"))
         {
-            rangedAttack();
+            if (GameManager.pickedUpCrossbow == true)
+            {
+                rangedAttack();
+            }
+            else
+            {
+                Debug.Log("You need to get a ranged weapon first!");
+            }
         }
     }
+
     void Attack()
     {
         GameObject attackObj = Instantiate(attackPrefab, firePoint.position, firePoint.rotation);
         Destroy(attackObj, 1.0f);
     }
 
-    
     void rangedAttack()
     {
         Vector3 point = cam.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y));
         Debug.Log(point);
         GameObject attackObj = Instantiate(rangedAttackPrefab, firePoint.position, firePoint.rotation);
-
         rb = attackObj.GetComponent<Rigidbody2D>();
         //Thanks to Matt Shaw for help with this line
         rb.AddForce((firePoint.transform.position - player.transform.position ).normalized * boltSpeed, ForceMode2D.Impulse);    
