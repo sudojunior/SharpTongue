@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Hotbar : InventoryHandler
 {
-
+    public Item[] ItemSlots;
     public Image Slot1;
     public Image Slot2;
     public Image Slot3;

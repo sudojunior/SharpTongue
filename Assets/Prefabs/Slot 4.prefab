@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4253428729884862376}
   - component: {fileID: 4253428729884862383}
   - component: {fileID: 4253428729884862382}
+  - component: {fileID: 8838728558866872716}
   m_Layer: 5
   m_Name: Slot 4
   m_TagString: Untagged
@@ -75,6 +76,21 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &8838728558866872716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4253428729884862377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5884d5413da5c5d41a06cc2a51ccfbc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rangeAngle: 0
+  rangeDistance: 0
+  damage: 0
 --- !u!1 &4253428729973926144
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,7 +103,7 @@ GameObject:
   - component: {fileID: 4253428729973926149}
   - component: {fileID: 4253428729973926150}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public readonly float rangeAngle;
-    public readonly float rangeDistance;
-    // public readonly float minDamage;
-    // public readonly float maxDamage;
-    public readonly float damage;
+    public float rangeAngle;
+    public float rangeDistance;
+    // public float minDamage;
+    // public float maxDamage;
+    public float damage;
 }

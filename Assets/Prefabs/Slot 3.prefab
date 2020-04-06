@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 900238095150237550}
   - component: {fileID: 900238095150237551}
   m_Layer: 5
-  m_Name: Text (2)
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 900238096346552689}
   - component: {fileID: 900238096346552688}
   - component: {fileID: 900238096346552691}
+  - component: {fileID: 2289095371011432416}
   m_Layer: 5
   m_Name: Slot 3
   m_TagString: Untagged
@@ -154,3 +155,18 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &2289095371011432416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900238096346552694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5884d5413da5c5d41a06cc2a51ccfbc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rangeAngle: 0
+  rangeDistance: 0
+  damage: 0
