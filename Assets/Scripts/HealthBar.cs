@@ -11,6 +11,14 @@ public class HealthBar : MonoBehaviour
 
     public Image fill;
 
+    public static GameObject UICanvas;
+
+    public static void OnEnable()
+    {
+        UICanvas = GameObject.FindGameObjectWithTag("UI");
+        DontDestroyOnLoad(UICanvas);
+    }
+  
     public void SetMaxHealth(int health)
     {
         healthSlider.maxValue = health;
@@ -19,8 +27,6 @@ public class HealthBar : MonoBehaviour
         fill.color = gradient.Evaluate(1f);
 
     }
-
-
 
    public void SetHealth(int health)
     {

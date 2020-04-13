@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public static bool pickedUpSword { get; set; }
     public static bool pickedUpCrossbow { get; set; }
     bool firstScene = true;
+    int lastScene; 
 
 
     void OnEnable()
@@ -25,7 +26,6 @@ public class GameManager : MonoBehaviour
             SceneManager.sceneLoaded += OnSceneLoaded;
             DontDestroyOnLoad(gameObject);
         }
-
         else
         {
             Destroy(gameObject);
@@ -35,17 +35,14 @@ public class GameManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        GetComponent<Player>().healthBar = GameObject.Find("HealthBar").GetComponent<HealthBar>();
-        GameObject.FindGameObjectWithTag("Player").transform.position = playerPosition;
-        GameObject.Find("HealthBar").GetComponent<HealthBar>().SetHealth(GetComponent<Player>().currentHealth);
+        Debug.Log("Last Scene: " + lastScene);
+        Debug.Log("Build Index: " + scene.buildIndex);
 
-        if (firstScene)
+        if (lastScene == scene.buildIndex && scene.buildIndex < 2 && !firstScene)
         {
-            firstScene = false;
-        }
-
-        else
-        {
+            GetComponent<Player>().healthBar = GameObject.Find("HealthBar").GetComponent<HealthBar>();
+            GameObject.FindGameObjectWithTag("Player").transform.position = playerPosition;
+            GameObject.Find("HealthBar").GetComponent<HealthBar>().SetHealth(GetComponent<Player>().currentHealth);
             if (enemyPositions.Count > 0)
             {
                 transform.position = enemyPositions[0];
@@ -78,6 +75,16 @@ public class GameManager : MonoBehaviour
                     Destroy(em.gameObject);
                 }
             }
+            lastScene = scene.buildIndex;
+        }
+
+        if (firstScene)
+        {
+            GetComponent<Player>().healthBar = GameObject.Find("HealthBar").GetComponent<HealthBar>();
+            GameObject.FindGameObjectWithTag("Player").transform.position = playerPosition;
+            GameObject.Find("HealthBar").GetComponent<HealthBar>().SetHealth(GetComponent<Player>().currentHealth);
+            firstScene = false;
+            lastScene = scene.buildIndex;
         }
     }
 }

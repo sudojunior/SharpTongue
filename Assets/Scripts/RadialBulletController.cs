@@ -60,7 +60,6 @@ public class RadialBulletController : MonoBehaviour
 
     void AttackTimer()
     {
-        
         RadialProjectileAttack();
     }
 }

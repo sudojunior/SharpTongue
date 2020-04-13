@@ -9,8 +9,6 @@ public class Pause : MonoBehaviour
     [SerializeField]
     private GameObject Player;
 
-
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))

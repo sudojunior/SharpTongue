@@ -14,9 +14,10 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        healthBar = FindObjectOfType<HealthBar>();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Update()
@@ -35,6 +36,19 @@ public class Player : MonoBehaviour
             Death();
         }
     }
+
+    /*public void OnEnable()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        healthBar = FindObjectOfType<HealthBar>();
+    }
+    */
+
+    public void HealingPotion()
+    {
+        healthBar.SetHealth(currentHealth);
+    }
+
 
     public void TakeDamage(int damage)
     {

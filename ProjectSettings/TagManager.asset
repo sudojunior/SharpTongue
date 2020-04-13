@@ -10,6 +10,7 @@ TagManager:
   - EnemyProjectile
   - EnemyLVL1
   - MovePointsRoom2
+  - UI
   layers:
   - Default
   - TransparentFX
