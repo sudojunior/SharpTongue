@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0f2fef63c44e0a41b144578fbdaec80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPrefab: {fileID: 0}
 --- !u!114 &1098054122230919167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,3 +61,4 @@ MonoBehaviour:
   currentHealth: 0
   healthBar: {fileID: 0}
   invincibleTimer: 0
+  player: {fileID: 7194002032359755707, guid: 14e9cc32b248cac4c94ad79658b676dd, type: 3}

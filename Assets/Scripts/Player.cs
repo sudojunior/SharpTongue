@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     public int maxHealth = 10;
     public int currentHealth;
-    public static bool playerInvincible { get; set; }
+    public static bool playerInvincible;
     public HealthBar healthBar;
     public float invincibleTimer;
     public GameObject player;
@@ -18,15 +18,17 @@ public class Player : MonoBehaviour
         healthBar = FindObjectOfType<HealthBar>();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        playerInvincible = false;
+        invincibleTimer = 0f;
     }
 
     void Update()
     {
-        if (playerInvincible && invincibleTimer >= 0)
+        if (playerInvincible && invincibleTimer > 0f)
         {
             invincibleTimer -= Time.deltaTime;
         }
-        else if (invincibleTimer <= 0)
+        else if (invincibleTimer <= 0f)
         {
             playerInvincible = false;
         }
@@ -37,12 +39,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    /*public void OnEnable()
-    {
-        player = GameObject.FindGameObjectWithTag("Player");
-        healthBar = FindObjectOfType<HealthBar>();
-    }
-    */
 
     public void HealingPotion()
     {
@@ -52,8 +48,13 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-        healthBar.SetHealth(currentHealth);
+        if (!playerInvincible)
+        {
+            currentHealth -= damage;
+            healthBar.SetHealth(currentHealth);
+            playerInvincible = true;
+            invincibleTimer = 1f;
+        }
     }
 
     void Death()

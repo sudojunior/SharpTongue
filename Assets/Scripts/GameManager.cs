@@ -12,7 +12,8 @@ public class GameManager : MonoBehaviour
     public static bool pickedUpSword { get; set; }
     public static bool pickedUpCrossbow { get; set; }
     bool firstScene = true;
-    int lastScene; 
+    int lastScene;
+    public GameObject playerPrefab;
 
 
     void OnEnable()
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
             pickedUpSword = false;
             SceneManager.sceneLoaded += OnSceneLoaded;
             DontDestroyOnLoad(gameObject);
+            
         }
         else
         {
@@ -77,9 +79,17 @@ public class GameManager : MonoBehaviour
             }
             lastScene = scene.buildIndex;
         }
+        else if (scene.buildIndex < 2 && !firstScene)
+        {
+            GetComponent<Player>().healthBar = GameObject.Find("HealthBar").GetComponent<HealthBar>();
+            GameObject.FindGameObjectWithTag("Player").transform.position = Vector2.zero;
+            GameObject.Find("HealthBar").GetComponent<HealthBar>().SetHealth(GetComponent<Player>().currentHealth);
+            lastScene = scene.buildIndex;
+        }
 
         if (firstScene)
         {
+            Instantiate(playerPrefab);
             GetComponent<Player>().healthBar = GameObject.Find("HealthBar").GetComponent<HealthBar>();
             GameObject.FindGameObjectWithTag("Player").transform.position = playerPosition;
             GameObject.Find("HealthBar").GetComponent<HealthBar>().SetHealth(GetComponent<Player>().currentHealth);

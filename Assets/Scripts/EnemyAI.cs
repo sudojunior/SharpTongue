@@ -3,7 +3,7 @@ using Pathfinding;
 
 public class EnemyAI : MonoBehaviour
 {
-    public float speed;
+    public float speed = 200f;
     public float nextWaypointDistance = 3f;
 
     private Transform target;

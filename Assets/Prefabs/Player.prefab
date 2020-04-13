@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 2238341258313736524}
   - component: {fileID: 7121939347917825980}
   - component: {fileID: 7959745208316985563}
+  - component: {fileID: 1934706175488478316}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -297,6 +298,18 @@ MonoBehaviour:
   mousePos: {x: 0, y: 0}
   rb: {fileID: 0}
   boltSpeed: 20
+--- !u!114 &1934706175488478316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7194002032359755707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e0558c95d68565499331429ea458b6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9182705139692156154
 GameObject:
   m_ObjectHideFlags: 0

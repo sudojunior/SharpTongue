@@ -11,6 +11,7 @@ TagManager:
   - EnemyLVL1
   - MovePointsRoom2
   - UI
+  - Walls
   layers:
   - Default
   - TransparentFX

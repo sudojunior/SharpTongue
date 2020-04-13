@@ -30,6 +30,7 @@ public class EnemyProjectile : MonoBehaviour
 
         else if (collider.gameObject.CompareTag("Enemy") || collider.gameObject.CompareTag("EnemyLVL1") || collider.gameObject.CompareTag("EnemyProjectile"))
         {
+            //Do nothing
         }
 
         else
