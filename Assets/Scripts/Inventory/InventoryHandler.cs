@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class InventoryHandler : MonoBehaviour
 {
-    public int slot { get; private set; }
-    public Item[] itemMap { get; private set; }
+    public int slot;
 
-    Item currentItem => itemMap[slot];
+    public Item[] itemMap;
+
+    public Item currentItem => itemMap[slot];
 
     public void Pickup(int item) => itemMap[item].SetEnabled(true);
 

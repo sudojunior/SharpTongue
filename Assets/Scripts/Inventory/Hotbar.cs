@@ -18,7 +18,7 @@ public class Hotbar : InventoryHandler
     {
         previousSlot = Slot1;
         HideSlots(Slot1);
-        SetSlot(1);
+        SetSlot(0);
     }
 
     void Update()
@@ -27,35 +27,35 @@ public class Hotbar : InventoryHandler
         {
 
             HideSlots(Slot1);
-            SetSlot(1);
+            SetSlot(0);
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
 
             HideSlots(Slot2);
-            SetSlot(2);
+            SetSlot(1);
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
 
             HideSlots(Slot3);
-            SetSlot(3);
+            SetSlot(2);
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
 
             HideSlots(Slot4);
-            SetSlot(4);
+            SetSlot(3);
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
 
             HideSlots(Slot5);
-            SetSlot(5);
+            SetSlot(4);
         }
 
     }

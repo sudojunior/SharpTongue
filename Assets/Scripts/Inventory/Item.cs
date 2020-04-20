@@ -1,12 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Item : MonoBehaviour
 {
-    public bool Enabled;
-
+    public bool Enabled = false;
+    // In seconds
     public float CooldownTime;
 
     public void SetEnabled(bool value) => Enabled = value;

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1600160617730850817}
   - component: {fileID: 1600160617730850818}
   - component: {fileID: 1600160617730850819}
-  - component: {fileID: 9178917698869358434}
+  - component: {fileID: 7303875564311551511}
   m_Layer: 5
   m_Name: Slot 1
   m_TagString: Untagged
@@ -76,7 +76,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &9178917698869358434
+--- !u!114 &7303875564311551511
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,9 +88,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5884d5413da5c5d41a06cc2a51ccfbc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rangeAngle: 0
-  rangeDistance: 0
-  damage: 0
 --- !u!1 &1600160618745255102
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,7 +100,7 @@ GameObject:
   - component: {fileID: 1600160618745255097}
   - component: {fileID: 1600160618745255096}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
